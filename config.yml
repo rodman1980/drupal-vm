@@ -7,7 +7,7 @@ vagrant_synced_folder_default_type: nfs
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
 # machine name, and IP address for each instance.
-vagrant_hostname: drupalvm.dev
+vagrant_hostname: drupal8.dev
 vagrant_machine_name: drupalvm
 vagrant_ip: 192.168.88.88
 
@@ -239,8 +239,13 @@ composer_path: /usr/bin/composer
 composer_home_path: "/home/{{ drupalvm_user }}/.composer"
 composer_home_owner: "{{ drupalvm_user }}"
 composer_home_group: "{{ drupalvm_user }}"
-# composer_global_packages:
-#   - { name: phpunit/phpunit, release: '@stable' }
+composer_global_packages:
+  - { name: phpunit/phpunit, release: '@stable' }
+  - { name: behat/mink, release: '1.5.*@stable' }
+  - { name: behat/mink-goutte-driver, release: '*' }
+  - { name: behat/mink-selenium2-driver, release: '*' }
+  - { name: drupal/drupal-extension, release: '*' }
+  - { name: libgraviton/codesniffer, release: '*' }
 
 # Run specified scripts after VM is provisioned. Path is relative to the
 # `provisioning/playbook.yml` file.
