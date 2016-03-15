@@ -255,7 +255,7 @@ composer_global_packages:
 # `provisioning/playbook.yml` file.
 post_provision_scripts:
   - "../examples/scripts/configure-solr.sh"
-  - "../examples/scripts/bashrc.sh"
+  - "../examples/scripts/post-executed.sh"
 
 # MySQL Configuration.
 mysql_root_password: root
