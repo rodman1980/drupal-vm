@@ -77,6 +77,11 @@ configure_local_drush_aliases: true
 # multisite deployments, you can point multiple servernames at one documentroot.
 # View the geerlingguy.apache Ansible Role README for more options.
 apache_vhosts:
+  - servername: "localhost"
+    documentroot: "/var/www"
+    extra_parameters: |
+          ProxyPassMatch ^/(.*\.php(/.*)?)$ "fcgi://127.0.0.1:9000/var/www"
+
   - servername: "{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
     extra_parameters: |
