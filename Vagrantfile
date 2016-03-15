@@ -45,8 +45,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = vconfig['vagrant_hostname']
   if vconfig['vagrant_ip'] == '0.0.0.0' && Vagrant.has_plugin?('vagrant-auto_network')
     config.vm.network :private_network, ip: vconfig['vagrant_ip'], auto_network: true
+    config.vm.network "forwarded_port", guest: 80, host: 1234
+    config.vm.network "forwarded_port", guest: 1234, host: 80
   else
     config.vm.network :private_network, ip: vconfig['vagrant_ip']
+    config.vm.network "forwarded_port", guest: 80, host: 1234
+    config.vm.network "forwarded_port", guest: 1234, host: 80
   end
 
   if !vconfig['vagrant_public_ip'].empty? && vconfig['vagrant_public_ip'] == '0.0.0.0'
