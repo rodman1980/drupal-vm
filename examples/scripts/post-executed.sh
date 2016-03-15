@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo chown vagrant:vagrant /var/www/
-sudo apt-get install php_codesniffer
+sudo chown vagrant:vagrant '/var/www/'
+sudo pear install PHP_CodeSniffer
 
 PHPCS='/usr/share/php/PHP/CodeSniffer/Standards/'
 VERSION_CODER='coder-7.x-2.5.tar.gz'
