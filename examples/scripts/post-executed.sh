@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo chown vagrant:vagrant '/var/www/'
 sudo pear install PHP_CodeSniffer
 
 PHPCS='/usr/share/php/PHP/CodeSniffer/Standards/'
