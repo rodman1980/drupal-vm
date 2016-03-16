@@ -9,7 +9,7 @@ CODER="https://ftp.drupal.org/files/projects/$VERSION_CODER"
 if [ -d "$PHPCS" ]; then
   echo "`pwd`"
   echo 'We have to install Drupal code standards'
-  cd '/home/vagrant'
+  cd /home/vagrant
   wget "$CODER"
   tar -xvf "$VERSION_CODER"
   sudo cp -R 'coder/coder_sniffer/Drupal' $PHPCS
