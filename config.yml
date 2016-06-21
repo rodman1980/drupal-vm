@@ -28,7 +28,7 @@ vagrant_synced_folders:
     create: true
 
 # Memory and CPU to use for this VM.
-vagrant_memory: 2048
+vagrant_memory: 3048
 vagrant_cpus: 2
 
 # The web server software to use. Can be either 'apache' or 'nginx'.
@@ -192,6 +192,7 @@ extra_packages:
   - unzip
   - pv
   - htop
+  - tree
 
 # `nodejs` must be in installed_extras for this to work. Valid examples: "0.10",
 # "0.12", "4.x", "5.x".
